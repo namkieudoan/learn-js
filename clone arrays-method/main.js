@@ -58,3 +58,16 @@ Array.prototype.some2 = function(callback){
   }
   return output;
 }
+
+//every2
+Array.prototype.every2 = function(callback){
+	let output = true;
+	for(let index in this){
+  	if(this.hasOwnProperty(index)){
+    	if(!(callback(this[index],index,this))){
+      	output =  false;
+      }
+    }
+  }
+  return output;
+}
