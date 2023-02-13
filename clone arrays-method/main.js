@@ -36,3 +36,12 @@ Array.prototype.find2 = function(callback){
     }
   }
 }
+
+//forEach2
+Array.prototype.forEach2 = function(callback){
+	for(let index in this){
+  	if(this.hasOwnProperty(index)){
+    	callback(this[index],index,this)
+    }
+  }
+}
