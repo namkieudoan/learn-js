@@ -45,3 +45,16 @@ Array.prototype.forEach2 = function(callback){
     }
   }
 }
+
+//some2
+Array.prototype.some2 = function(callback){
+	let output = false;
+	for(let index in this){
+  	if(this.hasOwnProperty(index)){
+    	if(callback(this[index],index,this)){
+      	output =  true;
+      }
+    }
+  }
+  return output;
+}
