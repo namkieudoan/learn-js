@@ -1,4 +1,4 @@
-// create Map2
+//Map2 method
 Array.prototype.map2 = function(callback){
   let mapArr= [];
   for(let i = 0; i < this.length; i++){
@@ -11,7 +11,7 @@ Array.prototype.map2 = function(callback){
 
 
 
-//create Filter2
+//Filter2 method
 Array.prototype.filter2 = function(callback){
 	let filterArr = [];   
 	for(let index in this){
@@ -25,4 +25,14 @@ Array.prototype.filter2 = function(callback){
   return filterArr
 }
 
-
+//Find2 method
+Array.prototype.find2 = function(callback){
+	for(let index in this){
+  	if(this.hasOwnProperty(index)){
+    	var result = callback(this[index],index,this)
+      if(result){
+      	return this[index] 
+      }
+    }
+  }
+}
