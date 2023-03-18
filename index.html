@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <h2>Hello World</h2>
+    </body>
+    <script>
+
+        //Func crud on localStorage
+        function createStorage(key){
+            const store = JSON.parse(localStorage.getItem(key)) ?? {}
+            
+            const save = ()=> {
+                 localStorage.setItem(key, JSON.stringify(store))
+            }
+            
+            const storage = {
+                get(key){
+                    return store[key]
+                },
+                set(key,value){
+                    store[key]=value;
+                    save()
+                },
+                remove(key){
+                    delete store[key]
+                    save()
+                }
+            }
+            return storage
+        }
+        
+        const person1 = createStorage("profile")
+        console.log(person1.set("fullname", "Nam Kieu"))
+        console.log(person1.set("age", 18))
+        document.querySelector("h2").textContent = person1.get("fullname") ?? "Mang rong"
+
+
+    </script>
+
+
+</html>

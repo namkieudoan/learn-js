@@ -1,4 +1,4 @@
-makeId = (number) => {
+const makeId = (number) => {
     let text = "";
     let possible = "ABCDEFGHIKLMNOPQRSTYWZ0123456789";
 
